@@ -1,20 +1,26 @@
 #!/usr/bin/env python
 
 """
+lastfm-lyrics-gui
+
 requirements.txt / python3.5
 
 pylast==1.6.0
 PyLyrics==1.1.0
-"""
 
+
+pex . -r requirements.txt -c lasfm_lyrics_gui.py -o lastfm-lyrics-gui.pex
+"""
+import os
 import tkinter as tk
+
 import pylast
 from PyLyrics import *
 
 
-LASTFM_API_KEY = ''
-LASTFM_API_SECRET = ''
-LASTFM_API_USERNAME = ''
+LASTFM_API_KEY = os.getenv('LASTFM_API_KEY', None)
+LASTFM_API_SECRET = os.getenv('LASTFM_API_SECRET', None)
+LASTFM_API_USERNAME = os.getenv('LASTFM_API_USERNAME', None)
 LASTFM_SYNC_TIME = 15000
 
 
